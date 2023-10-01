@@ -1,0 +1,15 @@
+nav{
+  display: flex;
+}
+
+#priority{
+  position: relative;
+  
+}
+.prioritySpan {
+  position: relative;
+
+  left: 2%;  
+}
+
+

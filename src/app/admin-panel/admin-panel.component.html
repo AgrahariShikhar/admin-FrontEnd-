@@ -1,0 +1,197 @@
+<nav class="navbar navbar-light bg-primary">
+  <div class="container-fluid">
+    <h1 style="border-bottom: solid 3px; color: aliceblue">💻 🅰️🇩🇲🇮🇳👨‍🦲</h1>
+    <div class="d-flex">
+      <mat-divider></mat-divider>
+      <section>
+        <div class="example-button-row">
+          <div class="example-flex-container">
+            <button mat-icon-button color="accent" (click)="ngOnInit()">
+              <mat-icon>home</mat-icon>
+            </button>
+          </div>
+        </div>
+      </section>
+      <mat-divider></mat-divider>
+    </div>
+  </div>
+</nav>
+
+<h2>
+  <strong style="border-bottom: solid 3px; text-align: center; margin-left: 45%"
+    >All Users Data</strong
+  >
+</h2>
+<span class="prioritySpan">
+  <strong id="priority">Filter : </strong>
+  <!-- <mat-form-field>
+    <mat-label>Strat Year</mat-label>
+    <mat-select placeholder="Years*" #clientValue  (selectionChange)="getbyStartYear($event.value)">
+    <mat-option  *ngFor="let client of usersData" [value]="client.start_year">
+      {{client.start_year}}
+    </mat-option>
+  </mat-select>
+ </mat-form-field> -->
+
+  <mat-form-field>
+    <mat-label>End Year</mat-label>
+    <mat-select
+      placeholder="Years*"
+      #clientValue
+      (selectionChange)="getbyEndYear($event.value)"
+    >
+      <mat-option *ngFor="let client of usersData" [value]="client.end_year">
+        {{ client.end_year }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Topics</mat-label>
+    <mat-select
+      placeholder="Topics*"
+      #clientValue
+      (selectionChange)="getbyTopics($event.value)"
+    >
+      <mat-option *ngFor="let client of usersData" [value]="client.topic">
+        {{ client.topic }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Sector</mat-label>
+    <mat-select
+      placeholder="Sectors*"
+      #clientValue
+      (selectionChange)="getbySectors($event.value)"
+    >
+      <mat-option *ngFor="let client of usersData" [value]="client.sector">
+        {{ client.sector }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Region</mat-label>
+    <mat-select
+      placeholder="Region*"
+      #clientValue
+      (selectionChange)="getByRegion($event.value)"
+    >
+      <mat-option *ngFor="let client of usersData" [value]="client.region">
+        {{ client.region }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Pestle</mat-label>
+    <mat-select
+      placeholder="Pestle*"
+      #clientValue
+      (selectionChange)="getByPestle($event.value)"
+    >
+      <mat-option *ngFor="let client of usersData" [value]="client.pestle">
+        {{ client.pestle }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Source</mat-label>
+    <mat-select
+      placeholder="source*"
+      #clientValue
+      (selectionChange)="getBySource($event.value)"
+    >
+      <mat-option *ngFor="let client of usersData" [value]="client.source">
+        {{ client.source }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>SWOT</mat-label>
+    <mat-select
+      placeholder="Swot*"
+      #clientValue
+      (selectionChange)="getBySwot($event.value)"
+    >
+      <mat-option *ngFor="let client of usersData" [value]="client.swot">
+        {{ client.swot }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Country</mat-label>
+    <mat-select
+      placeholder="Country*"
+      #clientValue
+      (selectionChange)="getByCountry($event.value)"
+    >
+      <mat-option *ngFor="let client of usersData" [value]="client.country">
+        {{ client.country }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>City</mat-label>
+    <mat-select
+      placeholder="City*"
+      #clientValue
+      (selectionChange)="getByCity($event.value)"
+    >
+      <mat-option *ngFor="let client of usersData" [value]="client.city">
+        {{ client.city }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</span>
+
+<div class="container-fluid">
+  <table class="table table-primary mt-5">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">country</th>
+        <th scope="col">start_year</th>
+        <th scope="col">end_year</th>
+        <!-- <th scope="col">impact</th> -->
+        <th scope="col">insight</th>
+        <th scope="col">intensity</th>
+        <th scope="col">likelihood</th>
+        <th scope="col">pestle</th>
+        <th scope="col">region</th>
+        <th scope="col">relevance</th>
+        <th scope="col">sector</th>
+        <th scope="col">source</th>
+        <th scope="col">title</th>
+        <th scope="col">topic</th>
+        <th scope="col">swot</th>
+        <!-- <th scope="col">url</th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let x of usersData">
+        <td class="table-warning">{{ x.id }}</td>
+        <td class="table-warning">{{ x.country }}</td>
+        <td class="table-warning">{{ x.start_year }}</td>
+        <td class="table-warning">{{ x.end_year }}</td>
+        <!-- <td class="table-warning">{{ x.impact }}</td> -->
+        <td class="table-warning">{{ x.insight }}</td>
+        <td class="table-warning">{{ x.intensity }}</td>
+        <td class="table-warning">{{ x.likelihood }}</td>
+        <td class="table-warning">{{ x.pestle }}</td>
+        <td class="table-warning">{{ x.region }}</td>
+        <td class="table-warning">{{ x.relevance }}</td>
+        <td class="table-warning">{{ x.sector }}</td>
+        <td class="table-warning">{{ x.source }}</td>
+        <td class="table-warning">{{ x.title }}</td>
+        <td class="table-warning">{{ x.topic }}</td>
+        <td class="table-warning">{{ x.swot }}</td>
+        <!-- <td class="table-warning">{{ x.url }}</td> -->
+        <!-- <td class="table-warning"><button class="btn btn-info" (click)="deleteUser(x.id)">Block</button></td> -->
+      </tr>
+    </tbody>
+  </table>
+</div>
